@@ -24,7 +24,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="text-3xl sm:text-5xl md:text-7xl font-extrabold glowing-text mb-6 leading-tight"
         >
-          Empowering <span className="text-blue-400">High School</span> Students
+          Empowering <span className="text-blue-400">Your Path</span> For Success
         </motion.p>
 
         <motion.p

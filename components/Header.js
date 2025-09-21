@@ -35,7 +35,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <img src="/logo.png" alt="Logo" className="h-12 w-12" />
-          <span className="text-2xl font-bold text-white">DreamPath</span>
+          <span className="text-2xl font-bold text-white">RiseTogether</span>
         </Link>
 
         {/* Hamburger menu button (mobile only) */}
