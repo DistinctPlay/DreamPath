@@ -24,7 +24,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="text-3xl sm:text-5xl md:text-7xl font-extrabold glowing-text mb-6 leading-tight"
         >
-          Empowering <span className="text-blue-400">International</span> Students
+          Empowering <span className="text-blue-400">High School</span> Students
         </motion.p>
 
         <motion.p
@@ -33,8 +33,7 @@ export default function Home() {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="max-w-2xl sm:max-w-3xl text-base sm:text-lg md:text-xl text-gray-300 mb-8 leading-relaxed"
         >
-          Discover how to navigate the college application process and achieve your dreams and join the{" "}
-          <span className='font-extrabold'>thousands of students</span> we've helped.
+          Discover how to navigate the college application process and achieve your dreams.
         </motion.p>
 
         <motion.button
@@ -69,7 +68,7 @@ export default function Home() {
             { title: "Scholarship Database" },
             { title: "Extracurricular Guide and Ranking" },
             { title: "Complete SAT & ACT Preparation" },
-            { title: "One-on-One Consultation" }
+            { title: "Q&A Sessions" }
           ].map((offer, idx) => (
             <motion.div
               key={idx}
