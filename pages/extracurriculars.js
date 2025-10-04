@@ -134,7 +134,6 @@ export default function Extracurriculars() {
 
   return (
     <>
-      <Header />
       <main className="flex flex-col items-center justify-center flex-grow px-4 py-10 min-h-screen">
         <h2 className="text-3xl font-bold mb-4 text-center">
           Extracurriculars — Tier List
@@ -162,7 +161,6 @@ export default function Extracurriculars() {
           ))}
         </div>
       </main>
-      <Footer />
     </>
   );
 }

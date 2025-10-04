@@ -130,7 +130,6 @@ export default function APPage() {
 
   return (
     <>
-      <Header />
       <main className="flex flex-col items-center justify-center flex-grow px-4 py-10 min-h-screen">
         <h2 className="text-3xl font-bold mb-4 text-center">AP Tier List</h2>
         <p className="text-slate-700 text-center max-w-3xl mb-8">
@@ -172,7 +171,6 @@ export default function APPage() {
           ))}
         </div>
       </main>
-      <Footer />
     </>
   );
 }
