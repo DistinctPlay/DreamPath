@@ -56,6 +56,7 @@ export default function Header() {
             <>
               <Link href="/ap" className="text-white hover:text-[#3B82F6]">AP</Link>
               <Link href="/extracurriculars" className="text-white hover:text-[#3B82F6]">Extracurriculars</Link>
+              <Link href="/interviews" className="text-white hover:text-[#3B82F6]">Interviews</Link>
             </>
           )}
           {!user ? (
