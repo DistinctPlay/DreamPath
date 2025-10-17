@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { app } from "../lib/firebase";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 export default function Interviews() {
   const [loading, setLoading] = useState(true);
@@ -41,7 +39,6 @@ export default function Interviews() {
 
   return (
     <>
-      <Header />
       <section className="flex flex-col items-center justify-center px-4 py-10 min-h-screen bg-gradient-to-b from-gray-100 to-gray-200">
         <h2 className="text-3xl font-bold mb-6 text-gray-800">Alumni Interviews</h2>
         <p className="text-gray-600 mb-10 text-center max-w-2xl">
@@ -71,7 +68,6 @@ export default function Interviews() {
           ))}
         </div>
       </section>
-      <Footer />
     </>
   );
 }
