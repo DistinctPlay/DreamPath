@@ -52,14 +52,10 @@ export default function Header() {
             menuOpen ? "flex" : "hidden"
           } flex-col md:flex md:flex-row gap-4 md:gap-6 absolute md:static top-16 left-0 w-full md:w-auto bg-gray-900 md:bg-transparent p-4 md:p-0 z-50`}
         >
-          <Link href="/dashboard" className="text-white hover:text-[#3B82F6]">Dashboard</Link>
           {user && (
             <>
               <Link href="/ap" className="text-white hover:text-[#3B82F6]">AP</Link>
-              <Link href="/commonapp" className="text-white hover:text-[#3B82F6]">Common App</Link>
               <Link href="/extracurriculars" className="text-white hover:text-[#3B82F6]">Extracurriculars</Link>
-              <Link href="/scholarships" className="text-white hover:text-[#3B82F6]">Scholarships</Link>
-              <Link href="/testing" className="text-white hover:text-[#3B82F6]">SAT & ACT</Link>
             </>
           )}
           {!user ? (
