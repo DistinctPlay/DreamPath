@@ -49,7 +49,10 @@ export default function Interviews() {
         Watch alumni share their experiences, lessons, and advice for high
         schoolers pursuing their dreams.
       </p>
-
+       <p className="text-gray-300 text-lg text-center mb-8 max-w-xl">
+        Coming Soon — Stay tuned for insights and advice from successful alumni!
+      </p>
+      {/*
       <div className="flex flex-col items-center w-full space-y-12">
         {interviews.map((interview) => (
           <div
@@ -74,6 +77,8 @@ export default function Interviews() {
           </div>
         ))}
       </div>
+      */}
     </section>
   );
 }
+      
