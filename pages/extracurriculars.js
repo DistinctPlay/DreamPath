@@ -24,7 +24,7 @@ export default function Extracurriculars() {
   const tiers = [
     {
       tier: "Platinum II",
-      color: "bg-indigo-300",
+      color: "bg-gradient-to-r from-indigo-500 to-purple-400 text-white",
       items: [
         "IMO Medalist",
         "IPhO/IChO/IBO Medalist",
@@ -36,7 +36,7 @@ export default function Extracurriculars() {
     },
     {
       tier: "Platinum I",
-      color: "bg-indigo-200",
+      color: "bg-gradient-to-r from-indigo-400 to-purple-300 text-white",
       items: [
         "RSI Finalist",
         "USACO Camp",
@@ -47,7 +47,7 @@ export default function Extracurriculars() {
     },
     {
       tier: "Diamond II",
-      color: "bg-cyan-300",
+      color: "bg-gradient-to-r from-cyan-500 to-blue-400 text-white",
       items: [
         "Regeneron Top 300",
         "USAMO Qualifier",
@@ -58,7 +58,7 @@ export default function Extracurriculars() {
     },
     {
       tier: "Diamond I",
-      color: "bg-cyan-200",
+      color: "bg-gradient-to-r from-cyan-400 to-blue-300 text-white",
       items: [
         "Science Olympiad Nationals",
         "YES Competition",
@@ -69,7 +69,7 @@ export default function Extracurriculars() {
     },
     {
       tier: "Gold II",
-      color: "bg-yellow-300",
+      color: "bg-gradient-to-r from-yellow-500 to-orange-400 text-white",
       items: [
         "ISEF Finalist",
         "FBLA Nationals",
@@ -80,7 +80,7 @@ export default function Extracurriculars() {
     },
     {
       tier: "Gold I",
-      color: "bg-yellow-200",
+      color: "bg-gradient-to-r from-yellow-400 to-orange-300 text-white",
       items: [
         "USAAAO",
         "USNCO Semifinalist",
@@ -91,7 +91,7 @@ export default function Extracurriculars() {
     },
     {
       tier: "Silver II",
-      color: "bg-gray-300",
+      color: "bg-gradient-to-r from-gray-400 to-gray-300 text-black",
       items: [
         "State Music Awards",
         "Science Fair State Winner",
@@ -101,7 +101,7 @@ export default function Extracurriculars() {
     },
     {
       tier: "Silver I",
-      color: "bg-gray-200",
+      color: "bg-gradient-to-r from-gray-300 to-gray-200 text-black",
       items: [
         "Eagle Scout",
         "National Merit Finalist",
@@ -111,7 +111,7 @@ export default function Extracurriculars() {
     },
     {
       tier: "Bronze II",
-      color: "bg-amber-200",
+      color: "bg-gradient-to-r from-amber-400 to-yellow-300 text-black",
       items: [
         "Club Founder/President",
         "Part-Time Job",
@@ -121,7 +121,7 @@ export default function Extracurriculars() {
     },
     {
       tier: "Bronze I",
-      color: "bg-amber-100",
+      color: "bg-gradient-to-r from-amber-300 to-yellow-200 text-black",
       items: [
         "Club Member",
         "JV Sports",
@@ -134,25 +134,28 @@ export default function Extracurriculars() {
 
   return (
     <>
-      <main className="flex flex-col items-center justify-center flex-grow px-4 py-10 min-h-screen">
-        <h2 className="text-3xl font-bold mb-4 text-center">
+      <main className="flex flex-col items-center justify-center flex-grow px-4 py-12 min-h-screen bg-gradient-to-b from-gray-900 via-blue-950 to-black">
+        <h2 className="text-4xl font-extrabold mb-4 text-center text-white drop-shadow-lg">
           Extracurriculars — Tier List
         </h2>
-        <p className="text-slate-700 text-center max-w-3xl mb-8">
+        <p className="text-gray-200 text-center max-w-3xl mb-10 text-lg">
           Ranked from most common (Bronze I) to rarest (Platinum II).  
           Each tier reflects increasing levels of selectivity, recognition, and impact.
         </p>
 
-        <div className="flex flex-col w-full max-w-5xl gap-3">
+        <div className="flex flex-col w-full max-w-6xl gap-8">
           {tiers.map((tier, index) => (
             <div
               key={index}
-              className={`rounded-xl shadow-md overflow-hidden ${tier.color} p-4`}
+              className={`rounded-2xl shadow-xl overflow-hidden ${tier.color} p-6 transition-transform hover:scale-[1.02]`}
             >
-              <h3 className="font-bold text-lg mb-2">{tier.tier}</h3>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 text-sm text-gray-800">
+              <h3 className="font-extrabold text-2xl mb-4 drop-shadow-md">{tier.tier}</h3>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-base">
                 {tier.items.map((item, i) => (
-                  <li key={i} className="bg-white/50 rounded-md p-2 shadow-sm">
+                  <li
+                    key={i}
+                    className="bg-white/30 backdrop-blur-md rounded-lg p-3 shadow-md text-center font-medium"
+                  >
                     {item}
                   </li>
                 ))}
