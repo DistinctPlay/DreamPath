@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { app } from "../lib/firebase";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 export default function APPage() {
   const [loading, setLoading] = useState(true);
@@ -19,12 +17,13 @@ export default function APPage() {
   }, [auth, router]);
 
   if (loading)
-    return <p className="text-center mt-10 text-gray-300">Loading...</p>;
+    return <p className="text-center mt-10 text-gray-400">Loading...</p>;
 
   const apTiers = [
     {
-      tier: "S Tier (Most Difficult)",
-      color: "bg-red-300",
+      tier: "S Tier — Most Difficult",
+      color: "bg-red-500",
+      text: "text-white",
       items: [
         "AP Physics C: Mechanics",
         "AP Physics C: Electricity & Magnetism",
@@ -35,8 +34,9 @@ export default function APPage() {
       ],
     },
     {
-      tier: "A Tier (Challenging)",
-      color: "bg-orange-200",
+      tier: "A Tier — Challenging",
+      color: "bg-orange-500",
+      text: "text-white",
       items: [
         "AP Biology",
         "AP Statistics",
@@ -47,8 +47,9 @@ export default function APPage() {
       ],
     },
     {
-      tier: "B Tier (Moderately Difficult)",
-      color: "bg-yellow-200",
+      tier: "B Tier — Moderately Difficult",
+      color: "bg-yellow-400",
+      text: "text-black",
       items: [
         "AP World History",
         "AP Environmental Science",
@@ -58,8 +59,9 @@ export default function APPage() {
       ],
     },
     {
-      tier: "C Tier (Accessible)",
-      color: "bg-green-200",
+      tier: "C Tier — Accessible",
+      color: "bg-green-400",
+      text: "text-black",
       items: [
         "AP Human Geography",
         "AP U.S. Government & Politics",
@@ -69,20 +71,17 @@ export default function APPage() {
       ],
     },
     {
-      tier: "D Tier (Introductory)",
-      color: "bg-blue-200",
-      items: [
-        "AP Art History",
-        "AP Music Theory",
-        "AP Seminar",
-        "AP Research",
-      ],
+      tier: "D Tier — Introductory",
+      color: "bg-blue-400",
+      text: "text-white",
+      items: ["AP Art History", "AP Music Theory", "AP Seminar", "AP Research"],
     },
   ];
 
   const careers = [
     {
-      career: "Software Developer",
+      career: "💻 Software Developer",
+      color: "bg-purple-200",
       recommended: [
         "AP Computer Science A",
         "AP Calculus AB/BC",
@@ -91,7 +90,8 @@ export default function APPage() {
       ],
     },
     {
-      career: "Financial Analyst",
+      career: "💼 Financial Analyst",
+      color: "bg-green-200",
       recommended: [
         "AP Economics (Micro & Macro)",
         "AP Statistics",
@@ -100,7 +100,8 @@ export default function APPage() {
       ],
     },
     {
-      career: "Doctor / Biomedical Researcher",
+      career: "🧬 Doctor / Biomedical Researcher",
+      color: "bg-blue-200",
       recommended: [
         "AP Biology",
         "AP Chemistry",
@@ -109,7 +110,8 @@ export default function APPage() {
       ],
     },
     {
-      career: "Law / Political Science",
+      career: "⚖️ Law / Political Science",
+      color: "bg-yellow-200",
       recommended: [
         "AP U.S. History",
         "AP U.S. Government & Politics",
@@ -118,7 +120,8 @@ export default function APPage() {
       ],
     },
     {
-      career: "Engineer",
+      career: "⚙️ Engineer",
+      color: "bg-red-200",
       recommended: [
         "AP Physics C: Mechanics",
         "AP Calculus BC",
@@ -129,48 +132,56 @@ export default function APPage() {
   ];
 
   return (
-    <>
-      <main className="flex flex-col items-center justify-center flex-grow px-4 py-10 min-h-screen">
-        <h2 className="text-3xl font-bold mb-4 text-center">AP Tier List</h2>
-        <p className="text-slate-700 text-center max-w-3xl mb-8">
-          AP courses ranked by general difficulty and college-level rigor.
-          Difficulty may vary by school and teacher, but this serves as a helpful guide.
-        </p>
+    <main className="flex flex-col items-center justify-center px-6 py-16 min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+      <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 text-center bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+        AP Tier List
+      </h1>
+      <p className="text-gray-300 text-center max-w-3xl mb-12 text-lg leading-relaxed">
+        A guide to understanding which APs are the hardest and which align best
+        with your career goals. Difficulty may vary by teacher and school.
+      </p>
 
-        <div className="flex flex-col w-full max-w-5xl gap-3 mb-12">
-          {apTiers.map((tier, index) => (
-            <div
-              key={index}
-              className={`rounded-xl shadow-md overflow-hidden ${tier.color} p-4`}
-            >
-              <h3 className="font-bold text-lg mb-2">{tier.tier}</h3>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 text-sm text-gray-800">
-                {tier.items.map((item, i) => (
-                  <li key={i} className="bg-white/50 rounded-md p-2 shadow-sm">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+      {/* AP Tiers */}
+      <div className="flex flex-col w-full max-w-6xl gap-6 mb-16">
+        {apTiers.map((tier, index) => (
+          <div
+            key={index}
+            className={`rounded-2xl shadow-2xl overflow-hidden ${tier.color} ${tier.text} p-6 transition transform hover:scale-[1.02]`}
+          >
+            <h3 className="text-2xl font-bold mb-4">{tier.tier}</h3>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-base font-medium">
+              {tier.items.map((item, i) => (
+                <li
+                  key={i}
+                  className="bg-white/20 rounded-lg p-3 shadow-inner hover:bg-white/30 transition"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
 
-        <h2 className="text-2xl font-bold mb-4 text-center">
-          Career-Based AP Recommendations
-        </h2>
-        <div className="flex flex-col w-full max-w-4xl gap-3">
-          {careers.map((career, i) => (
-            <div key={i} className="bg-gray-100 rounded-xl shadow p-4">
-              <h3 className="font-semibold mb-2">{career.career}</h3>
-              <ul className="list-disc list-inside text-sm text-gray-700">
-                {career.recommended.map((ap, j) => (
-                  <li key={j}>{ap}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </main>
-    </>
+      {/* Career Recommendations */}
+      <h2 className="text-3xl font-bold mb-6 text-center text-cyan-300">
+        Career-Based AP Recommendations
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-5xl mb-20">
+        {careers.map((career, i) => (
+          <div
+            key={i}
+            className={`rounded-2xl p-6 shadow-lg ${career.color} text-gray-900 hover:scale-[1.03] transition`}
+          >
+            <h3 className="text-xl font-semibold mb-3">{career.career}</h3>
+            <ul className="list-disc list-inside text-base font-medium">
+              {career.recommended.map((ap, j) => (
+                <li key={j}>{ap}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </main>
   );
 }
