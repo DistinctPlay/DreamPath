@@ -61,13 +61,7 @@ export default function Home() {
           Introducing <span className="text-blue-400">RiseTogether</span>
         </motion.p>
       <div className="aspect-w-16 aspect-h-9">
-      <iframe
-        className="w-full h-[60vh] rounded-2xl shadow-xl border-4 border-blue-500"
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ" // Replace with your video link
-        title="Welcome Video"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/M89e_MMjOyM?si=56nU7oS_yUhQHGTy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         </section>
       </div>
