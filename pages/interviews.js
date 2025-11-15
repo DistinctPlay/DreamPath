@@ -23,7 +23,7 @@ export default function Interviews() {
       title: "Computer Science @ UCONN",
       description:
         "Ishana discusses AP Computer Science, data analytics, and her path to UCONN.",
-      videoUrl: "https://youtu.be/AWHo92EZkS4",
+      videoUrl: "https://www.youtube.com/embed/AWHo92EZkS4?si=FLROSN1R5aUzVXjQ",
     },
   ];
 
