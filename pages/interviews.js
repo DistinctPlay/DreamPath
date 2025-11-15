@@ -19,19 +19,11 @@ export default function Interviews() {
   const interviews = [
     {
       id: 1,
-      name: "Arjun Patel",
-      title: "Computer Science @ MIT",
+      name: "Ishana Mokashi",
+      title: "Computer Science @ UCONN",
       description:
-        "Arjun discusses AP Computer Science, robotics, and his path to MIT.",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    },
-    {
-      id: 2,
-      name: "Sarah Lin",
-      title: "Finance @ NYU Stern",
-      description:
-        "Sarah shares how FBLA leadership and networking helped her succeed.",
-      videoUrl: "https://www.youtube.com/embed/9bZkp7q19f0",
+        "Ishana discusses AP Computer Science, data analytics, and her path to UCONN.",
+      videoUrl: "https://youtu.be/AWHo92EZkS4",
     },
   ];
 
@@ -49,10 +41,6 @@ export default function Interviews() {
         Watch alumni share their experiences, lessons, and advice for high
         schoolers pursuing their dreams.
       </p>
-       <p className="text-gray-300 text-lg text-center mb-8 max-w-xl">
-        Coming Soon — Stay tuned for insights and advice from successful alumni!
-      </p>
-      {/*
       <div className="flex flex-col items-center w-full space-y-12">
         {interviews.map((interview) => (
           <div
@@ -77,7 +65,6 @@ export default function Interviews() {
           </div>
         ))}
       </div>
-      */}
     </section>
   );
 }
